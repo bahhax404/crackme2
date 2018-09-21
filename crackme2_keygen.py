@@ -10,11 +10,11 @@ if(len(username)< 5 or len(username) > 9):
 #the number to shift the second part of the password    
 shiftNumber = len(username) - 1 
 
-for i in username:
+for chars in username:
     # increment the ascii characters
-    chars = int(ord(i)) + x  
+    char = int(ord(chars)) + x  
     # append the character to firstPart
-    firstPart.append(chr(chars))  
+    firstPart.append(chr(char))  
     x = x + 1
 # reverse the obtained firstPart
 rev = list(reversed(firstPart)) 
@@ -23,8 +23,8 @@ firstPart = ''.join(rev)
 #generate the second part by shifting character in the end of the username 
 reversedUsername = list(reversed(username))
 #slice username to take only needed charcaters to complete 10 characters password.
-for i in reversedUsername[:10 - len(username)]:
-    chars = int(ord(i)) +  shiftNumber
-    secondPart.append(chr(chars))
+for chars in reversedUsername[:10 - len(username)]:
+    char = int(ord(chars)) +  shiftNumber
+    secondPart.append(chr(char))
 
 print("The password is " + "[" + firstPart + str(''.join(secondPart)) + "]")
