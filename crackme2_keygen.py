@@ -1,4 +1,4 @@
-import string
+
 username = []
 firstPart = []
 secondPart = []
